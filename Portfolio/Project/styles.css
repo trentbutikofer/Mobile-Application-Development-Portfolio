@@ -1,0 +1,19 @@
+body {
+    width: 400px;
+    margin: auto;
+}
+.group {
+    width: 111px;
+    height: 111px;
+    float: left;
+    border: 1px solid black;
+}
+.grid {   
+    width: 35px;
+    height: 35px;
+    border: 1px solid black;
+    float: left;
+}
+#output {
+    width: 360px;
+}

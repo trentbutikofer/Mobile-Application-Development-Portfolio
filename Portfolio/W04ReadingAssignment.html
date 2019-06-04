@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+
+</head>
+
+<body>
+
+    <script>
+	
+        let arrays = [[1, 2, 3], [4, 5], [6]]
+
+        function reduce(array, combine, start) {
+            let newArray = [];
+            for (let element of arrays) {
+                newArray = combine(newArray, element);
+            }
+            return newArray;
+        }
+
+        console.log(reduce(arrays, (a, b) => a.concat(b), 0));
+
+    </script>
+
+</body>
+
+</html>

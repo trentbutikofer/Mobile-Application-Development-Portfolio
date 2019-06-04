@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W02 Reading Assignment 1</title>
+  
+  <script>
+
+    function doInputOutput() {
+        var input = document.getElementById("input").value;
+        var result = isEven(input);
+        document.getElementById("output").innerHTML = result;
+    }
+
+	  function isEven(input) {
+        var n = Math.abs(parseInt(input));
+        if (n == 0) {
+          return true;
+        } else if (n == 1) {
+          return false;
+        } else {
+          return isEven(n - 2);
+        }
+      }
+
+  </script>
+
+</head>
+
+<body>
+
+  <h1>EVEN / ODD TEST: Enter a number</h1>
+  <input type="textarea" id="input">
+  <button type="button" onclick="doInputOutput()">Click</button>
+  <div id="output"></div>
+
+</body>
+
+</html>

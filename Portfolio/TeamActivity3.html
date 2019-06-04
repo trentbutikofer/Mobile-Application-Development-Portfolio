@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+  <style>
+      .ticTac {
+        margin: 0;
+        border: 0px;
+        padding: 0;
+        height: 100px;
+        width: 100px;
+        background-color: white;
+        font-size: 30px;
+      }
+      td:nth-child(2) {
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+      }
+      tr:nth-child(2) td {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+     
+
+  </style>
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td><button class="clickAble ticTac"></button></td>
+            <td><button class="clickAble ticTac"></button></td>
+            <td><button class="clickAble ticTac"></button></td>
+        </tr>
+        <tr>
+            <td><button class="clickAble ticTac"></button></td>
+            <td><button class="clickAble ticTac"></button></td>
+            <td><button class="clickAble ticTac"></button></td>
+        </tr>
+        <tr>
+            <td><button class="clickAble ticTac"></button></td>
+            <td><button class="clickAble ticTac"></button></td>
+            <td><button class="clickAble ticTac"></button></td>
+        </tr>
+    </table>
+        <button onclick="reset()">Reset</button>
+        <div id = "output"></div>
+
+    <script>
+    var clicked = 0;
+
+    document.addEventListener('touchend', function (event) { 
+        if (event.target.classList[0] == "clickAble") {
+        clicked++;
+        if (clicked % 2 == 0) {
+            event.target.innerHTML = "O";
+        } else {
+            event.target.innerHTML = "X";
+        }
+        event.target.classList.toggle("clickAble");
+        checkWin(event);
+    }
+    });
+
+    function checkWin(event) {
+        var table = Array.from(document.querySelectorAll(".ticTac"));
+        var check = "";
+        table.forEach(function (element) {
+            check += element.innerHTML;
+            console.log(check);
+            var output = document.getElementById("output");
+            
+        });
+    }
+
+    function reset() {
+        var table = Array.from(document.querySelectorAll(".ticTac"));
+        table.forEach(function (element) {
+            element.innerHTML = "";
+        });
+    }
+	
+  </script>
+
+</body>
+
+</html>
